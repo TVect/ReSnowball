@@ -27,6 +27,7 @@ class VectorSpaceModel(object):
 
             # remove stop words and tokenize
             document = [word for word in nltk.word_tokenize(line.lower()) if word not in stopwords]
+            # document = [word for word in line.lower().split() if word not in stopwords]
             documents.append(document)
             count += 1
             if count % 10000 == 0:
@@ -40,3 +41,4 @@ class VectorSpaceModel(object):
 
         print(len(documents), "documents red")
         print(len(self.dictionary), " unique tokens")
+

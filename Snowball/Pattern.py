@@ -28,6 +28,9 @@ class Pattern(object):
             self.centroid_bet = t.bet_vector
             self.centroid_aft = t.aft_vector
 
+    def __hash__(self):
+        return hash(self.__str__())
+
     def __str__(self):
         output = ''
         for t in self.tuples:

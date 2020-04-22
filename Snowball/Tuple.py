@@ -48,9 +48,11 @@ class Tuple(object):
             print("use_reverb configuration parameter not set")
             sys.exit(0)
 
+    def __hash__(self):
+        return hash(tuple([self.e1, self.e2]))
+
     def __str__(self):
-        return str(self.bef_words.encode("utf8") + ' ' + self.bet_words.encode("utf8") + ' ' +
-                   self.aft_words.encode("utf8"))
+        return str(self.bef_words + ' ' + self.bet_words + ' ' + self.aft_words)
 
     def __eq__(self, other):
         return (
