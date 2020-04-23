@@ -134,6 +134,7 @@ class Snowball(object):
                         sys.stdout.write(".")
                         sys.stdout.flush()
                     sim_best = 0
+                    # TODO 上一轮的迭代匹配结果并没有清空？所以继续影响这一次的 pos/neg/unknown 统计?
                     for extraction_pattern in self.patterns:
                         score = self.similarity(t, extraction_pattern)
                         if score > self.config.threshold_similarity:

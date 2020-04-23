@@ -1,0 +1,5 @@
+# entity type
+e1:ORG
+e2:LOC
+
+# seed tuple

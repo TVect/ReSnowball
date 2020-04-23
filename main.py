@@ -23,4 +23,19 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sentences_file = "data/sentences.txt"
+    config_file = "parameters.cfg"
+
+    seeds_file_pos = "data/seed_positive.txt"
+    seeds_file_neg = "data/seed_negative.txt"
+
+    sim_threshold = 0.7
+    conf_threshold = 0.6
+
+    snowball = Snowball(config_file, seeds_file_pos, seeds_file_neg, sentences_file,
+                        float(sim_threshold), float(conf_threshold))
+    if sentences_file.endswith('.pkl'):
+        snowball.init_bootstrapp(tuples=sentences_file)
+    else:
+        snowball.generate_tuples(sentences_file)
+        snowball.init_bootstrapp(tuples=None)

@@ -1,0 +1,9 @@
+# entity type
+e1:ORG
+e2:LOC
+
+# seed tuple
+ArcelorMittal;Hunedoara
+European Court;Luxembourg
+Ulster Bank;Belfast
+STMicroelectronics;San Diego
